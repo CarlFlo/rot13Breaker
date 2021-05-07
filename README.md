@@ -4,7 +4,7 @@ This module will attempt to break a message that has been encrypted with a simpl
 
 Test coverage: **100%**
 
-This code will brute force each solution (26), analyse each result using frequence analysis and then return an ordered array with the guesses where the first element is the best guess.
+This code will brute force each solution (26), analyse each result using frequency analysis and then return an ordered array with the guesses where the first element is the best guess.
 
 
 ## Install
