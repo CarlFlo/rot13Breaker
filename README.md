@@ -1,13 +1,32 @@
 # Rot 13 Breaker
 
-This module will attempt to break a message that has been encrypted with a simple letter substitution cipher (such as [ROT13](https://en.wikipedia.org/wiki/ROT13) or [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher)) using frequence analysis.
+This module will attempt to break a message that has been encrypted with a simple letter substitution cipher (such as [ROT13](https://en.wikipedia.org/wiki/ROT13) or [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher)). 
 
-The default alphabet is a-z.
+Test coverage: **100%**
+
+This code will brute force each solution (26), analyse each result using frequence analysis and then return an ordered array with the guesses where the first element is the best guess.
+
+
+
+## Install
+
+```
+go get github.com/CarlFlo/rot13Breaker
+```
 
 ## Usage
 
+Each element in the output array contains data about the guess
+- Entropy: Lower the better, the chance that this is the correct answer
+- Shift: How many characters the message was shifted by
+- Preview: A short preview (max 20 characters) of the message, used for verifying
+
 ```go
+input := "Guvf vf n grfg gb frr vs guvf jbexf"
 
+output, err := Decrypt(input)
 
-
+for _, guess := range output {
+    fmt.Printf("%f - %d - %s\n", guess.entropy, guess.shift, guess.preview)
+}
 ```
