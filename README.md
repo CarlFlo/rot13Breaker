@@ -6,7 +6,6 @@ Test coverage: **100%**
 
 This code will brute force each solution (26), analyse each result using frequency analysis and then return an ordered array with the guesses where the first element is the best guess.
 
-
 ## Install
 
 ```
@@ -23,7 +22,7 @@ Each element in the output array contains data about the guess
 ```go
 input := "Guvf vf n grfg gb frr vs guvf jbexf"
 
-guesses, err := rot13Breaker.Decrypt(input)
+guesses := rot13Breaker.Decrypt(input)
 
 for _, guess := range guesses {
     fmt.Printf("%f - %d - %s\n", guess.entropy, guess.shift, guess.preview)
