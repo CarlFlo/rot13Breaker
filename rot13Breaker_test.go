@@ -6,8 +6,8 @@ import (
 
 func TestDecrypt(t *testing.T) {
 
-	input := "QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD"
-	expectedShifts := 3
+	input := "Znoy oy g zkyz ul znk iujk"
+	expectedShifts := 20
 
 	output := Decrypt(input)
 
@@ -19,8 +19,8 @@ func TestDecrypt(t *testing.T) {
 
 func TestDecryptLong(t *testing.T) {
 
-	input := "Zdlklu pz whya vm aol nlvnyhwopjhs hylh vm Mluuvzjhukph. Aol jspthal pz pu nlulyhs tpsk mvy paz uvyaolysf shapabkl kbl av zpnupmpjhua thypaptl pumsblujl. Pu zwpal vm aol opno shapabkl, Zdlklu vmalu ohz dhyt jvuapuluahs zbttlyz, ilpun svjhalk pu iladllu aol Uvyao Hashuapj, aol Ihsapj Zlh, huk chza Ybzzph. Aol nlulyhs jspthal huk lucpyvutlua chyf zpnupmpjhuasf myvt aol zvbao huk uvyao kbl av aol chza shapabkhs kpmmlylujl, huk tbjo vm Zdlklu ohz ylsphisf jvsk huk zuvdf dpualyz. Zvbaolyu Zdlklu pz wylkvtpuhuasf hnypjbsabyhs, dopsl aol uvyao pz olhcpsf mvylzalk huk pujsbklz h wvyapvu vm aol Zjhukpuhcphu Tvbuahpuz."
-	expectedShifts := 19
+	input := "Lpxwxg bl itkm hy max zxhzktiabvte tkxt hy Yxgghlvtgwbt. Max vebftmx bl bg zxgxkte fbew yhk bml ghkmaxker etmbmnwx wnx mh lbzgbybvtgm ftkbmbfx bgyenxgvx. Bg libmx hy max abza etmbmnwx, Lpxwxg hymxg atl ptkf vhgmbgxgmte lnffxkl, uxbgz ehvtmxw bg uxmpxxg max Ghkma Tmetgmbv, max Utembv Lxt, tgw otlm Knllbt. Max zxgxkte vebftmx tgw xgobkhgfxgm otkr lbzgbybvtgmer ykhf max lhnma tgw ghkma wnx mh max otlm etmbmnwte wbyyxkxgvx, tgw fnva hy Lpxwxg atl kxebtuer vhew tgw lghpr pbgmxkl. Lhnmaxkg Lpxwxg bl ikxwhfbgtgmer tzkbvnemnkte, pabex max ghkma bl axtober yhkxlmxw tgw bgvenwxl t ihkmbhg hy max Lvtgwbgtobtg Fhngmtbgl."
+	expectedShifts := 7
 
 	output := Decrypt(input)
 
