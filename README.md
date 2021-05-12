@@ -17,7 +17,7 @@ go get github.com/CarlFlo/rot13Breaker
 Each element in the output array contains data about the guess
 - Entropy: Lower the better, the chance that this is the correct answer
 - Shift: How many characters the message was shifted by
-- Preview: A short preview (max 20 characters) of the message, used for verifying
+- Preview: A short preview (up to 20 characters) of the message that can be used for verifying that the shift is correct
 
 ```go
 input := "Guvf vf n grfg gb frr vs guvf jbexf"
