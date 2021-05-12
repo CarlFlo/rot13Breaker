@@ -7,9 +7,9 @@ import (
 )
 
 type attempt struct {
-	entropy float64
-	shift   int
-	preview string
+	Entropy float64
+	Shift   int
+	Preview string
 }
 
 var (
@@ -60,7 +60,7 @@ func calculateScore(shift int, input *string) attempt {
 	// With the input now shifted by n so can we analyse it using letter frequency data
 
 	// Offers a preview for
-	preview := buffer.String()[:int(math.Min(float64(len(*input)-1), 20))]
+	preview := buffer.String()[:int(math.Min(float64(len(*input)), 20))]
 
 	sum := float64(0)
 	skipped := 0
@@ -76,7 +76,7 @@ func calculateScore(shift int, input *string) attempt {
 	// Calculate the entropy. The lower the better
 	entropy := sum / math.Log(2) / float64((len(*input) - skipped))
 
-	return attempt{shift: shift, entropy: entropy, preview: preview}
+	return attempt{Shift: shift, Entropy: entropy, Preview: preview}
 }
 
 func insertionSort(slice *[26]attempt) {
@@ -84,7 +84,7 @@ func insertionSort(slice *[26]attempt) {
 	for i := 1; i < len(slice); i++ {
 		j := i
 		for j > 0 {
-			if slice[j-1].entropy > slice[j].entropy {
+			if slice[j-1].Entropy > slice[j].Entropy {
 				slice[j-1], slice[j] = slice[j], slice[j-1]
 			}
 			j = j - 1

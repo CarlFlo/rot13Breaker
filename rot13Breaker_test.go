@@ -11,8 +11,8 @@ func TestDecrypt(t *testing.T) {
 
 	output := Decrypt(input)
 
-	if output[0].shift != expectedShifts {
-		t.Fatalf("Expected first result to show %d shifts, got %d", expectedShifts, output[0].shift)
+	if output[0].Shift != expectedShifts {
+		t.Fatalf("Expected first result to show %d shifts, got %d", expectedShifts, output[0].Shift)
 	}
 
 }
@@ -24,7 +24,7 @@ func TestDecryptLong(t *testing.T) {
 
 	output := Decrypt(input)
 
-	if output[0].shift != expectedShifts {
-		t.Fatalf("Expected first result to show %d shifts, got %d", expectedShifts, output[0].shift)
+	if output[0].Shift != expectedShifts {
+		t.Fatalf("Expected first result to show %d shifts, got %d", expectedShifts, output[0].Shift)
 	}
 }
