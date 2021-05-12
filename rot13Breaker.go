@@ -7,9 +7,9 @@ import (
 )
 
 type attempt struct {
-	Entropy float64
 	Shift   int
 	Preview string
+	entropy float64
 }
 
 var (
@@ -30,13 +30,6 @@ func Decrypt(message string) [26]attempt {
 	}
 
 	insertionSort(&attemps)
-
-	// For debugging
-	/*
-		for _, v := range attemps {
-			fmt.Printf("%v %d %s\n", v.entropy, v.shift, v.preview)
-		}
-	*/
 
 	// Returns the top n guesses
 	return attemps
@@ -76,7 +69,7 @@ func calculateScore(shift int, input *string) attempt {
 	// Calculate the entropy. The lower the better
 	entropy := sum / math.Log(2) / float64((len(*input) - skipped))
 
-	return attempt{Shift: shift, Entropy: entropy, Preview: preview}
+	return attempt{Shift: shift, Preview: preview, entropy: entropy}
 }
 
 func insertionSort(slice *[26]attempt) {
@@ -84,7 +77,7 @@ func insertionSort(slice *[26]attempt) {
 	for i := 1; i < len(slice); i++ {
 		j := i
 		for j > 0 {
-			if slice[j-1].Entropy > slice[j].Entropy {
+			if slice[j-1].entropy > slice[j].entropy {
 				slice[j-1], slice[j] = slice[j], slice[j-1]
 			}
 			j = j - 1

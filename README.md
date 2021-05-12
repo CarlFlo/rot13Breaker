@@ -15,7 +15,6 @@ go get github.com/CarlFlo/rot13Breaker
 ## Usage
 
 Each element in the output array contains data about the guess
-- Entropy: Lower the better, the chance that this is the correct answer
 - Shift: How many characters the input has to be shifted by to get the *original* message back
 - Preview: A short preview (up to 20 characters) of the message that can be used for verifying that the shift is correct
 
@@ -25,6 +24,6 @@ input := "Guvf vf n grfg gb frr vs guvf jbexf"
 guesses := rot13Breaker.Decrypt(input)
 
 for _, guess := range guesses {
-    fmt.Printf("%f - %d - %s\n", guess.Entropy, guess.Shift, guess.Preview)
+    fmt.Printf("%d - %s\n", guess.Shift, guess.Preview)
 }
 ```
